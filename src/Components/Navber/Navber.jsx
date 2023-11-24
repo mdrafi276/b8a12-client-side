@@ -153,7 +153,7 @@ const Navber = () => {
                   </label>
                   <ul
                     tabIndex={0}
-                    className="mt-3 z-[1] p-2  shadow menu menu-sm dropdown-content  backdrop-blur-sm bg-white/5 border-white  rounded-box "
+                    className="mt-3 z-[1] p-2  shadow menu menu-sm dropdown-content  bg-transparent  rounded-box "
                   >
                     {/* customcode  */}
                     <div className="card">
@@ -170,7 +170,7 @@ const Navber = () => {
                               alt=""
                             />
                           </label>
-                          <Link to="/Profile"><button className="text-black  text-sm hover:underline mb-1 mt-1"> Prifile</button></Link>
+                          <Link to="/Profile"><button className="text-black pl-1 text-sm hover:underline mb-1 mt-1"> Prifile</button></Link>
                         </div>
                         
                         <div className="button-container">

@@ -19,31 +19,29 @@ const Timeline = () => {
               to: "##2D838D",
             },
           }}
-          contentArrowStyle={{ borderRight: "7px solid  #041A1F", }}
+          contentArrowStyle={{ borderRight: "7px solid  #041A1F" }}
           iconStyle={{ background: "#041A1F", color: "#fff" }}
           icon={<IoCarSportSharp />}
         >
-          <h3 className="vertical-timeline-element-title">Creative Director</h3>
-          <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
-          <p>
-            Creative Direction, User Experience, Visual Design, Project
-            Management, Team Leading
-          </p>
+          <h3 className="vertical-timeline-element-title">
+            Solutions for 1-9{" "}
+          </h3>
+          <h4 className="vertical-timeline-element-subtitle"> employees</h4>
+          <p>Making life easier for our all employees</p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
           className="vertical-timeline-element--work "
           contentStyle={{ background: "#041A1F", color: "#fff" }}
-          iconStyle={{ background: "#041A1F",  color: "#fff" }}
+          iconStyle={{ background: "#041A1F", color: "#fff" }}
           icon={<IoCarSportSharp />}
         >
-          <h3 className="vertical-timeline-element-title">Art Director</h3>
-          <h4 className="vertical-timeline-element-subtitle">
-            San Francisco, CA
-          </h4>
+          <h3 className="vertical-timeline-element-title">
+            Solutions for 10-19
+          </h3>
+          <h4 className="vertical-timeline-element-subtitle">employees</h4>
 
           <p>
-            Creative Direction, User Experience, Visual Design, SEO, Online
-            Marketing
+            Cut Through the red Tape with Payonline Solutions for Small Business
           </p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
@@ -60,10 +58,10 @@ const Timeline = () => {
           iconStyle={{ background: "#041A1F", color: "#fff" }}
           icon={<IoCarSportSharp />}
         >
-          <h3 className="vertical-timeline-element-title">Web Designer</h3>
-          <h4 className="vertical-timeline-element-subtitle">
-            Los Angeles, CA
-          </h4>
+          <h3 className="vertical-timeline-element-title">
+            Solutions for 20-49
+          </h3>
+          <h4 className="vertical-timeline-element-subtitle">employees</h4>
           <p>User Experience, Visual Design</p>
         </VerticalTimelineElement>
         <VerticalTimelineElement

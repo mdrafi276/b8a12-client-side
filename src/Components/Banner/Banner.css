@@ -169,3 +169,110 @@
      z-index: 1;
 
  }
+ /* hover button  */
+ .c-button {
+     color: #000;
+     font-weight: 700;
+     font-size: 16px;
+     text-decoration: none;
+     padding: 0.9em 1.6em;
+     cursor: pointer;
+     display: inline-block;
+     vertical-align: middle;
+     position: relative;
+     z-index: 1;
+ }
+
+ .c-button--gooey {
+     color: #06c8d9;
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     border: 4px solid #06c8d9;
+     border-radius: 0;
+     position: relative;
+     transition: all 700ms ease;
+ }
+
+ .c-button--gooey .c-button__blobs {
+     height: 100%;
+     filter: url(#goo);
+     overflow: hidden;
+     position: absolute;
+     top: 0;
+     left: 0;
+     bottom: -3px;
+     right: -1px;
+     z-index: -1;
+ }
+
+ .c-button--gooey .c-button__blobs div {
+     background-color: #06c8d9;
+     width: 34%;
+     height: 100%;
+     border-radius: 100%;
+     position: absolute;
+     transform: scale(1.4) translateY(125%) translateZ(0);
+     transition: all 700ms ease;
+ }
+
+ .c-button--gooey .c-button__blobs div:nth-child(1) {
+     left: -5%;
+ }
+
+ .c-button--gooey .c-button__blobs div:nth-child(2) {
+     left: 30%;
+     transition-delay: 60ms;
+ }
+
+ .c-button--gooey .c-button__blobs div:nth-child(3) {
+     left: 66%;
+     transition-delay: 25ms;
+ }
+
+ .c-button--gooey:hover {
+     color: #fff;
+ }
+
+ .c-button--gooey:hover .c-button__blobs div {
+     transform: scale(1.4) translateY(0) translateZ(0);
+ }
+ /* another btuuon  */
+ .btn-1 {
+     width: 6.5em;
+     height: 2.3em;
+     margin: 0.5em;
+    background: transparent;
+
+     color: white;
+    
+     border-radius: 0.625em;
+     font-size: 20px;
+     font-weight: bold;
+     cursor: pointer;
+     position: relative;
+     z-index: 1;
+     overflow: hidden;
+ }
+
+ button:hover {
+     color: black;
+ }
+
+ button:after {
+     content: "";
+     background: white;
+     position: absolute;
+     z-index: -1;
+     left: -20%;
+     right: -20%;
+     top: 0;
+     bottom: 0;
+     transform: skewX(-45deg) scale(0, 1);
+     transition: all 0.5s;
+ }
+
+ button:hover:after {
+     transform: skewX(-45deg) scale(1, 1);
+     -webkit-transition: all 0.5s;
+     transition: all 0.5s;
+ }
