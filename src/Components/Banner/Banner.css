@@ -1,0 +1,171 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'poppins', sans-serif;
+ }
+
+
+
+ .section {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+     height: 100vh;
+     /* background: url(https://i.ibb.co/W6W8fnd/3586321-2588.jpg) no-repeat;
+      */
+    
+     background-size: cover;
+     background-position: center;
+     animation: animareBg 5s infinite;
+
+ }
+
+ @keyframes animareBg {
+     100% {
+         filter: hue-rotate(360deg);
+     }
+ }
+
+
+
+
+ @media (max-width: 478px) {
+     .login-box {
+         width: 100%;
+         height: 100vh;
+         border: none;
+         border-radius: 0;
+     }
+
+     .input-box {
+         width: 290px;
+     }
+ }
+
+ /* button animation  */
+ .btn-one {
+     /* background: rgba(255, 255, 255, 0.10); */
+
+     color: white;
+
+ }
+
+ .btn-one:hover {
+     background: linear-gradient(90deg, #08ff08, #50e3fc, #bc13fc, #03a9f4, #0ff0fc);
+     background-size: 500%;
+     z-index: 1;
+     border: none;
+     animation: blink 7s linear infinite;
+
+ }
+
+ @keyframes blink {
+     from {
+         background-position: 0%;
+
+     }
+
+     to {
+         background-position: 500%;
+
+     }
+
+ }
+
+ .btn-one::after {
+     content: "";
+     position: absolute;
+     left: -10px;
+     bottom: -10px;
+     right: -10px;
+     top: -10px;
+     background: inherit;
+     border-radius: 40px;
+     filter: blur(50px);
+     z-index: 0;
+
+ }
+
+ .btn-one:hover::after {
+     opacity: 1;
+     z-index: 1;
+
+ }
+
+ /* Text animation  */
+ .h-one {
+
+     background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);
+     background-size: 400%;
+
+
+
+
+
+     -webkit-text-fill-color: transparent;
+     /* -webkit-background-clip: text; */
+     animation: animate 10s linear infinite;
+
+ }
+
+ @keyframes animate {
+     0% {
+         background-position: 0%;
+     }
+
+     100% {
+         background-position: 400%;
+     }
+ }
+
+
+ btn-three {
+     /* background: rgba(255, 255, 255, 0.10); */
+
+     color: white;
+
+ }
+
+ .btn-three:hover {
+     background: linear-gradient(90deg, #08ff08, #50e3fc, #bc13fc, #03a9f4, #0ff0fc);
+     background-size: 500%;
+     z-index: 1;
+     border: none;
+     animation: blink 7s linear infinite;
+
+ }
+
+ @keyframes blink {
+     from {
+         background-position: 0%;
+
+     }
+
+     to {
+         background-position: 500%;
+
+     }
+
+ }
+
+ .btn-three::after {
+     content: "";
+     position: absolute;
+
+
+     background: inherit;
+
+     filter: blur(50px);
+     z-index: 0;
+
+ }
+
+ .btn-three:hover::after {
+     opacity: 1;
+     z-index: 1;
+
+ }
