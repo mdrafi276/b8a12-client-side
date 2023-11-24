@@ -33,6 +33,7 @@ const Timeline = () => {
           <h4 className="vertical-timeline-element-subtitle">
             San Francisco, CA
           </h4>
+          
           <p>
             Creative Direction, User Experience, Visual Design, SEO, Online
             Marketing
