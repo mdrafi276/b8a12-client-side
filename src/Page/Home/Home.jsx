@@ -1,3 +1,4 @@
+
 import Banner from "../../Components/Banner/Banner";
 import Footer from "../../Components/Footer/Footer";
 import Navber from "../../Components/Navber/Navber";
@@ -7,7 +8,7 @@ const Home = () => {
     return (
         <div>
             <Navber></Navber>
-            <Banner></Banner>
+        <Banner></Banner>
             <Timeline></Timeline>
             <Footer></Footer>
         </div>

@@ -3,7 +3,7 @@ const Banner = () => {
     return (
       <div>
         <div className="w-[100%]  md:-mt-[170px]">
-          <video
+          <video 
             className="w-full md:h-[662px]   lg:h-[760px]"
             muted
             autoPlay
@@ -23,13 +23,13 @@ const Banner = () => {
             </p>
             <div className="w-[90%] flex items-center justify-center mt-4 mx-auto ">
               <button className="btn btn-three text-center bg-transparent border-2 border-white  ">
-                Get Start
+                Get Started
               </button>
             </div>
           </div>
         </div>
-        <div className=' absolute w-[100%] -mt-[100px] flex justify-center' >
-          <button className="mouse ">
+        <div className=' absolute w-[100%] md:-mt-[200px] -mt-[15px] lg:-mt-[100px] flex justify-center' >
+          <button className="mouse animate-bounce ">
             <div className="scroll"></div>
           </button>
         </div>

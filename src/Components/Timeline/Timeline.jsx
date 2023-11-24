@@ -9,11 +9,18 @@ const Timeline = () => {
     <div>
       <VerticalTimeline>
         <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          contentStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-          contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
-          date="2011 - present"
-          iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+          className="vertical-timeline-element--work  "
+          contentStyle={{
+            background: "#041A1F",
+            color: "#fff",
+            hover: {
+              background: "gradient-to-r",
+              from: "##2D838D",
+              to: "##2D838D",
+            },
+          }}
+          contentArrowStyle={{ borderRight: "7px solid  #041A1F", }}
+          iconStyle={{ background: "#041A1F", color: "#fff" }}
           icon={<IoCarSportSharp />}
         >
           <h3 className="vertical-timeline-element-title">Creative Director</h3>
@@ -24,25 +31,33 @@ const Timeline = () => {
           </p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          date="2010 - 2011"
-          iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+          className="vertical-timeline-element--work "
+          contentStyle={{ background: "#041A1F", color: "#fff" }}
+          iconStyle={{ background: "#041A1F",  color: "#fff" }}
           icon={<IoCarSportSharp />}
         >
           <h3 className="vertical-timeline-element-title">Art Director</h3>
           <h4 className="vertical-timeline-element-subtitle">
             San Francisco, CA
           </h4>
-          
+
           <p>
             Creative Direction, User Experience, Visual Design, SEO, Online
             Marketing
           </p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          date="2008 - 2010"
-          iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+          className="vertical-timeline-element--work "
+          contentStyle={{
+            background: "#041A1F",
+            color: "#fff",
+            hover: {
+              background: "gradient-to-r",
+              from: "##2D838D",
+              to: "##2D838D",
+            },
+          }}
+          iconStyle={{ background: "#041A1F", color: "#fff" }}
           icon={<IoCarSportSharp />}
         >
           <h3 className="vertical-timeline-element-title">Web Designer</h3>
@@ -52,9 +67,9 @@ const Timeline = () => {
           <p>User Experience, Visual Design</p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          date="2006 - 2008"
-          iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+          className="vertical-timeline-element--work "
+          contentStyle={{ background: "#041A1F", color: "#fff" }}
+          iconStyle={{ background: "#041A1F", color: "#fff" }}
           icon={<IoCarSportSharp />}
         >
           <h3 className="vertical-timeline-element-title">Web Designer</h3>
@@ -65,7 +80,7 @@ const Timeline = () => {
         </VerticalTimelineElement>
         <VerticalTimelineElement
           className="vertical-timeline-element--education"
-          date="April 2013"
+          contentStyle={{ background: "#041A1F", color: "#fff" }}
           iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
           icon={<IoCarSportSharp />}
         >
@@ -77,7 +92,7 @@ const Timeline = () => {
         </VerticalTimelineElement>
         <VerticalTimelineElement
           className="vertical-timeline-element--education"
-          date="November 2012"
+          contentStyle={{ background: "#041A1F", color: "#fff" }}
           iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
           icon={<IoCarSportSharp />}
         >
@@ -89,7 +104,7 @@ const Timeline = () => {
         </VerticalTimelineElement>
         <VerticalTimelineElement
           className="vertical-timeline-element--education"
-          date="2002 - 2006"
+          contentStyle={{ background: "#041A1F", color: "#fff" }}
           iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
           icon={<IoCarSportSharp />}
         >
