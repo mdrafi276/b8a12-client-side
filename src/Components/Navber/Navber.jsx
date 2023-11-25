@@ -6,7 +6,6 @@ import Swal from "sweetalert2";
 import profile from "../../../src/assets/user.png";
 import './Navber.css'
 import Headroom from "react-headroom";
-import image from "../../../src/assets/user.png";
 import { AuthContext } from "../Provider/AuthProvider";
 import { GrLogin, GrLogout } from "react-icons/gr";
 const Navber = () => {
@@ -119,19 +118,19 @@ const Navber = () => {
                 </div>
                 <h1
                   id="title-h1"
-                  className="lg:text-2xl gap-2 flex items-center md:text-xl text-[15px] "
+                  className=" flex items-center h-[30px]  "
                 >
-                  <span>
-                    <img className="w-10 rounded-full" src={image} alt="" />
-                  </span>
-                  <span className="">Company</span>
+                
+                  <img className="w-[120px]  h-[100px]"
+                    src="https://i.ibb.co/b5t5qfV/download-1-removebg-preview.png"
+                    alt=""
+                  />
                 </h1>
               </div>
               <div className="navbar-center hidden   lg:flex">
                 <ul className="menu menu-horizontal  px-1">{navLink}</ul>
               </div>
               <div className="navbar-end ">
-             
                 <div className="dropdown  dropdown-end ">
                   <label
                     tabIndex={0}
@@ -171,13 +170,16 @@ const Navber = () => {
                               alt=""
                             />
                           </label>
-                          <Link to="/Profile"><button className="text-black pl-1 text-sm hover:underline mb-1 mt-1"> Prifile</button></Link>
+                          <Link to="/Profile">
+                            <button className="text-black pl-1 text-sm hover:underline mb-1 mt-1">
+                              {" "}
+                              Prifile
+                            </button>
+                          </Link>
                         </div>
-                        
+
                         <div className="button-container">
-                          <button className="button">
-                          
-                          </button>
+                          <button className="button"></button>
                           <buttone className="button hover:text-black">
                             {user ? (
                               <div>
@@ -185,26 +187,27 @@ const Navber = () => {
                                   onClick={handleSignOut}
                                   className="  backdrop-blur ml-3 hover:underline hover:text-blackk  bg-transparent  text-white "
                                 >
-                                <GrLogout/>
+                                  <GrLogout />
                                 </button>
                               </div>
                             ) : (
                               <Link to="/login">
                                 <buttone className=" justify-between ml-3 hover:text-black hover:underline  backdrop-blur  bg-transparent  text-white">
-                                  <GrLogin/>
+                                  <GrLogin />
                                 </buttone>
                               </Link>
                             )}
                           </buttone>
                           <Link to="/register">
-                            <buttone className="button  text-white">Register</buttone>
+                            <buttone className="button  text-white">
+                              Register
+                            </buttone>
                           </Link>
                         </div>
                       </div>
                     </div>
 
                     {/* customcode */}
-
                   </ul>
                 </div>
               </div>

@@ -6,7 +6,6 @@ const Banner = () => {
           <video
             className="w-full md:h-[662px]   lg:h-[760px]"
             muted
-            
             autoPlay
             src="../../../src/assets/background_-_23088 (720p).mp4"
           ></video>
@@ -14,7 +13,7 @@ const Banner = () => {
         <div className="absolute lg:-mt-[500px] md:ml-[80px] -mt-[203px] md:-mt-[460px] md:w-[600px] lg:w-[900px] lg:ml-[227px] md:h-[300px] lg:h-[400px]">
           <div className=" flex flex-col items-center justify-center lg:mt-10 text-center w-[80%] md:w-[90%] mx-auto">
             <h1 className=" md:text-4xl h-one lg:text-6xl text-sm font-bold text-white uppercase">
-              Payroll & HR Solutions
+              We make workforce management
             </h1>
             <p className=" text-white md:text-[12px] text-[10px] lg:text-[16px] mt-5">
               Save time and improve payroll accuracy with the latest in time and
@@ -32,7 +31,6 @@ const Banner = () => {
                 </div>
               </button> */}
               <buttone className="btn-1  btn backdrop-blur border-white hover:border-none border  ">
-               
                 Get Stant
               </buttone>
             </div>
@@ -43,7 +41,6 @@ const Banner = () => {
             <div className="scroll"></div>
           </button>
         </div>
-        
       </div>
     );
 };

@@ -59,20 +59,21 @@ const Sidebar = () => {
           /> */}
 
           <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-black border-2 hover:border-none transition-colors duration-300 transform      ">
-            <GrHome/>
+            <GrHome />
 
             <span className="mx-4 font-medium ">Home</span>
           </buttone>
           <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-black border-2 hover:border-none transition-colors duration-300 transform      ">
-            <GrUser/>
+            <GrUser />
 
             <span className="mx-4 font-medium ">User</span>
           </buttone>
-          <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-black border-2 hover:border-none transition-colors duration-300 transform      ">
-            <GrLogout className="w-5 h-5 " />
-
-            <span className="mx-4 font-medium ">Logout</span>
-          </buttone>
+          <Link to="employeeLst">
+            <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-black border-2 hover:border-none transition-colors duration-300 transform      ">
+              <GrLogout className="w-5 h-5 " />{" "}
+              <span className="mx-4 font-medium ">Employee list</span>
+            </buttone>{" "}
+          </Link>
           <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-black border-2 hover:border-none transition-colors duration-300 transform      ">
             <GrLogout className="w-5 h-5 " />
 

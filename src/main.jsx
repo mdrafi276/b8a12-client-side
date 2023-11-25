@@ -12,11 +12,12 @@ import ContactUs from './Page/ContactUs/ContactUs';
 import Error from './Erroe/Error';
 import Dashboard from './Page/Dashbord/Dashbord';
 import RegisterTwo from './Page/Register/RegisterTwo';
+import EmployeeLst from './Page/Dashbord/EmployeeLst/EmployeeLst';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <LeyOut></LeyOut>,
-    errorElement:<Error></Error>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",
@@ -39,15 +40,15 @@ const router = createBrowserRouter([
         element: <Profile></Profile>,
       },
       {
-        path: "dashboard",
-      element:<Dashboard></Dashboard>,
+        path: "/dashboard",
+        element: <Dashboard></Dashboard>,
         children: [
           {
-            path: "user",
+            path: "employeeLst",
+            element: <EmployeeLst></EmployeeLst>,
           },
         ],
       },
-      
     ],
   },
 ]);

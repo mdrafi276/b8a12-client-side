@@ -11,8 +11,8 @@ const Testimonial = () => {
       .then((data) => setCorousolData(data));
   }, []);
   return (
-    <div>
-      <div className="text-center md:mt-20 mt-10">
+    <div className="lg:mt-52 lg:mb-52 mt-10 md:mt-20">
+      <div className="text-center md:mt-20 lg:mb-20 mt-10">
         <h1 className="text-white text-5xl font-bold h-one">
           USER TESTIMONIALS
         </h1>
