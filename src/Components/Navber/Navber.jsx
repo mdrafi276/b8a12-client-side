@@ -8,6 +8,7 @@ import './Navber.css'
 import Headroom from "react-headroom";
 import image from "../../../src/assets/user.png";
 import { AuthContext } from "../Provider/AuthProvider";
+import { GrLogin, GrLogout } from "react-icons/gr";
 const Navber = () => {
 
 
@@ -33,7 +34,7 @@ const Navber = () => {
             isLoading
               ? "loading"
               : isActive
-              ? "text-black bg-white hover:text-white "
+              ? "text-black bg-white hover:text-black "
               : ""
           }
           to="/"
@@ -47,7 +48,7 @@ const Navber = () => {
             isLoading
               ? "loading"
               : isActive
-              ? "text-black bg-white hover:text-white "
+              ? "text-black bg-white hover:text-black "
               : ""
           }
           to="/rooms"
@@ -177,26 +178,26 @@ const Navber = () => {
                           <button className="button">
                           
                           </button>
-                          <button className="button">
+                          <buttone className="button hover:text-black">
                             {user ? (
                               <div>
                                 <button
                                   onClick={handleSignOut}
-                                  className="  backdrop-blur ml-3 hover:underline  bg-transparent  text-white "
+                                  className="  backdrop-blur ml-3 hover:underline hover:text-blackk  bg-transparent  text-white "
                                 >
-                                 logOut
+                                <GrLogout/>
                                 </button>
                               </div>
                             ) : (
                               <Link to="/login">
-                                <button className=" justify-between ml-3 hover:underline  backdrop-blur  bg-transparent  text-white">
-                                  Login
-                                </button>
+                                <buttone className=" justify-between ml-3 hover:text-black hover:underline  backdrop-blur  bg-transparent  text-white">
+                                  <GrLogin/>
+                                </buttone>
                               </Link>
                             )}
-                          </button>
+                          </buttone>
                           <Link to="/register">
-                            <button className="button">Register</button>
+                            <buttone className="button  text-white">Register</buttone>
                           </Link>
                         </div>
                       </div>
@@ -204,33 +205,6 @@ const Navber = () => {
 
                     {/* customcode */}
 
-                    {/* <li>
-                      <Link
-                        to="/profile"
-                        className="justify-between hover:underline"
-                      >
-                        View Profile
-                      </Link>
-                    </li>
-                    <li className="hover:underline">
-                      <Link to="/register">Register</Link>
-                    </li>
-                    {user ? (
-                      <div>
-                        <button
-                          onClick={handleSignOut}
-                          className="  backdrop-blur ml-3 hover:underline  bg-transparent  text-white "
-                        >
-                          LogOut
-                        </button>
-                      </div>
-                    ) : (
-                      <Link to="/login">
-                        <button className=" justify-between ml-3 hover:underline  backdrop-blur  bg-transparent  text-white">
-                          Login
-                        </button>
-                      </Link>
-                    )} */}
                   </ul>
                 </div>
               </div>

@@ -9,10 +9,14 @@ import Login from './Page/Login/Login';
 import Register from './Page/Register/Register';
 import Profile from './Page/Profile/Profile';
 import ContactUs from './Page/ContactUs/ContactUs';
+import Error from './Erroe/Error';
+import Dashboard from './Page/Dashbord/Dashbord';
+import RegisterTwo from './Page/Register/RegisterTwo';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <LeyOut></LeyOut>,
+    errorElement:<Error></Error>,
     children: [
       {
         path: "/",
@@ -24,7 +28,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/register",
-        element: <Register></Register>,
+        element: <RegisterTwo></RegisterTwo>,
       },
       {
         path: "/contactUs",
@@ -36,13 +40,14 @@ const router = createBrowserRouter([
       },
       {
         path: "dashboard",
-        element: <Profile></Profile>,
+      element:<Dashboard></Dashboard>,
         children: [
           {
             path: "user",
           },
         ],
       },
+      
     ],
   },
 ]);

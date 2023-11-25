@@ -46,7 +46,7 @@
      }
  }
 
- /* button animation  */
+ /* buttone animation  */
  .btn-one {
      /* background: rgba(255, 255, 255, 0.10); */
 
@@ -169,21 +169,22 @@
      z-index: 1;
 
  }
- /* hover button  */
- .c-button {
+ /* hover buttone  */
+ .c-buttone {
      color: #000;
      font-weight: 700;
      font-size: 16px;
      text-decoration: none;
      padding: 0.9em 1.6em;
      cursor: pointer;
+     
      display: inline-block;
      vertical-align: middle;
      position: relative;
      z-index: 1;
  }
 
- .c-button--gooey {
+ .c-buttone--gooey {
      color: #06c8d9;
      text-transform: uppercase;
      letter-spacing: 2px;
@@ -193,7 +194,7 @@
      transition: all 700ms ease;
  }
 
- .c-button--gooey .c-button__blobs {
+ .c-buttone--gooey .c-button__blobs {
      height: 100%;
      filter: url(#goo);
      overflow: hidden;
@@ -205,7 +206,7 @@
      z-index: -1;
  }
 
- .c-button--gooey .c-button__blobs div {
+ .c-buttone--gooey .c-button__blobs div {
      background-color: #06c8d9;
      width: 34%;
      height: 100%;
@@ -215,25 +216,25 @@
      transition: all 700ms ease;
  }
 
- .c-button--gooey .c-button__blobs div:nth-child(1) {
+ .c-buttone--gooey .c-button__blobs div:nth-child(1) {
      left: -5%;
  }
 
- .c-button--gooey .c-button__blobs div:nth-child(2) {
+ .c-buttone--gooey .c-button__blobs div:nth-child(2) {
      left: 30%;
      transition-delay: 60ms;
  }
 
- .c-button--gooey .c-button__blobs div:nth-child(3) {
+ .c-buttone--gooey .c-button__blobs div:nth-child(3) {
      left: 66%;
      transition-delay: 25ms;
  }
 
- .c-button--gooey:hover {
-     color: #fff;
+ .c-buttone--gooey:hover {
+     color: black;
  }
 
- .c-button--gooey:hover .c-button__blobs div {
+ .c-buttone--gooey:hover .c-button__blobs div {
      transform: scale(1.4) translateY(0) translateZ(0);
  }
  /* another btuuon  */
@@ -254,11 +255,11 @@
      overflow: hidden;
  }
 
- button:hover {
+ buttone:hover {
      color: black;
  }
 
- button:after {
+ buttone:after {
      content: "";
      background: white;
      position: absolute;
@@ -271,8 +272,39 @@
      transition: all 0.5s;
  }
 
- button:hover:after {
+ buttone:hover:after {
      transform: skewX(-45deg) scale(1, 1);
      -webkit-transition: all 0.5s;
      transition: all 0.5s;
  }
+
+ /* Text animation  */
+ .h-one {
+
+     background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);
+     background-size: 400%;
+
+
+
+
+
+     -webkit-text-fill-color: transparent;
+     -webkit-background-clip: text;
+     animation: animate 10s linear infinite;
+
+ }
+
+ @keyframes animate {
+     0% {
+         background-position: 0%;
+     }
+
+     100% {
+         background-position: 400%;
+     }
+ }
+
+ /* naptune 
+ animation one framermontin
+ */
+ 

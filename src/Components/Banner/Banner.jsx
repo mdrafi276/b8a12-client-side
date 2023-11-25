@@ -12,7 +12,7 @@ const Banner = () => {
         </div>
         <div className="absolute lg:-mt-[500px] md:ml-[80px] -mt-[203px] md:-mt-[460px] md:w-[600px] lg:w-[900px] lg:ml-[227px] md:h-[300px] lg:h-[400px]">
           <div className=" flex flex-col items-center justify-center lg:mt-10 text-center w-[80%] md:w-[90%] mx-auto">
-            <h1 className=" md:text-4xl lg:text-6xl text-sm font-bold text-white uppercase">
+            <h1 className=" md:text-4xl h-one lg:text-6xl text-sm font-bold text-white uppercase">
               Payroll & HR Solutions
             </h1>
             <p className=" text-white md:text-[12px] text-[10px] lg:text-[16px] mt-5">
@@ -30,10 +30,10 @@ const Banner = () => {
                   <div></div>
                 </div>
               </button> */}
-              <button className="btn-1 btn backdrop-blur border-white hover:border-none border-2 ">
-                {" "}
-                Button
-              </button>
+              <buttone className="btn-1  btn backdrop-blur border-white hover:border-none border  ">
+               
+                Get Stant
+              </buttone>
             </div>
           </div>
         </div>
@@ -42,6 +42,7 @@ const Banner = () => {
             <div className="scroll"></div>
           </button>
         </div>
+        
       </div>
     );
 };
