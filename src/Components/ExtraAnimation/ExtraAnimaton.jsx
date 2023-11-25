@@ -2,7 +2,7 @@ import './ExtraAnimation.css'
 const ExtraAnimaton = () => {
     return (
       <div>
-        <div className="bg-black lg:block hidden pt-[12.25rem] pb-[30.25rem] d-flex justify-content-center align-items-center">
+        <div className="bg-black lg:block hidden pt-[12.25rem] pb-[40.25rem] d-flex justify-content-center align-items-center">
           <div className="obj w-[500Px] h-[500px]  mx-auto">
             <div className="objchild">
               <div>

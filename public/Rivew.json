@@ -1,0 +1,38 @@
+[
+  {
+    "image": "https://i.ibb.co/SJ1ywqH/m1.jpg",
+    "name": "John Doe",
+    "rating": 3.5,
+    "feedback": "I had a wonderful experience at Riverside Inn. The staff was incredibly friendly, and the rooms had a beautiful view of the river. I would definitely recommend it."
+  },
+  {
+    "image": "https://i.ibb.co/kcpv66d/m3.jpg",
+    "name": "David Johnson",
+    "rating": 4.8,
+    "feedback": "My stay at Oceanview Resort was unforgettable. The breathtaking views of the ocean and excellent service exceeded my expectations."
+  },
+  {
+    "image": "https://i.ibb.co/zNh71TP/m2.jpg",
+    "name": "Jane Smith",
+    "rating": 2.3,
+    "feedback": "Mountain Lodge provided a great retreat in the hills. The surroundings were serene, and the staff was attentive. The rooms were spacious and comfortable."
+  },
+  {
+    "image": "https://i.ibb.co/VB9xkc1/m5.jpg",
+    "name": "Michael Brown",
+    "rating": 5.7,
+    "feedback": "City Lights Hotel was the perfect urban escape. The skyline view from our room was spectacular, and the hotel's location made it easy to explore the city."
+  },
+  {
+    "image": "https://i.ibb.co/16Pdmxc/m4.jpg",
+    "name": "Emily Williams",
+    "rating": 4.6,
+    "feedback": "My stay at Desert Oasis Resort was an incredible experience. The tranquil atmosphere, luxurious amenities, and attentive staff made it truly memorable."
+  },
+  {
+    "image": "https://i.ibb.co/GtVCP21/m6.jpg",
+    "name": "Sarah Davis",
+    "rating": 3.4,
+    "feedback": "Lakeside Retreat was a hidden gem. The peaceful setting by the lake, combined with well-maintained facilities, made our stay relaxing and enjoyable."
+  }
+]

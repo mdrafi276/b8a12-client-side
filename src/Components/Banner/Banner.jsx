@@ -6,6 +6,7 @@ const Banner = () => {
           <video
             className="w-full md:h-[662px]   lg:h-[760px]"
             muted
+            
             autoPlay
             src="../../../src/assets/background_-_23088 (720p).mp4"
           ></video>
