@@ -1,5 +1,5 @@
 
-import Banner from "../../Components/Banner/Banner";
+import CopyBanner from "../../Components/Banner/BannerTwo";
 import ExtraAnimaton from "../../Components/ExtraAnimation/ExtraAnimaton";
 import Footer from "../../Components/Footer/Footer";
 import Navber from "../../Components/Navber/Navber";
@@ -14,8 +14,7 @@ const Home = () => {
     return (
         <div>
             <Navber></Navber>
-       <Banner></Banner>
-       
+            <CopyBanner></CopyBanner>
             <Service></Service>
             <Timeline></Timeline>
             <ExtraAnimaton></ExtraAnimaton>
