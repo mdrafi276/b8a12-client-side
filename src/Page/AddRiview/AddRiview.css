@@ -1,0 +1,17 @@
+/* .anime{
+    background-image: url("../../../src//assets/color-sharp.png");
+background-size: cover;
+background-repeat: no-repeat;
+} */
+.anime-one{
+    background-image: url("../../../src//assets/login-svgrepo-com.png");
+background-size: cover;
+background-repeat: no-repeat;
+}
+
+.anime-two {
+    background-image: url("../../../src//assets/color-sharp2.png");
+    background-size: cover;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+}

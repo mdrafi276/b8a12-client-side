@@ -8,7 +8,7 @@ const ContactUs = () => {
             
         </div>
              <div>
-      <div className=" body-font relative">
+      <div className=" body-font anime-one relative">
         <div className=" px-5 py-24 mx-auto">
           <div className="flex flex-col text-center w-full mb-12">
             <h1 className="sm:text-3xl md:text-5xl  font-bold title-font mb-4 text-white">

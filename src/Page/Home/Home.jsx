@@ -14,7 +14,7 @@ const Home = () => {
     return (
         <div>
             <Navber></Navber>
-        <Banner></Banner>
+       <Banner></Banner>
        
             <Service></Service>
             <Timeline></Timeline>

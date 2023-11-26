@@ -1,5 +1,5 @@
 // import Swal from "sweetalert2";
-
+import './AddRiview.css'
 const AddRiview = () => {
   // const handleriview = () => {
     // e.preventDefault();
@@ -34,7 +34,7 @@ const AddRiview = () => {
     //   });
     
   return (
-    <div>
+    <div className="anime">
       <div className="text-gray-600 body-font relative">
         <div className=" px-5 py-24 mx-auto">
           <div className="flex flex-col text-center w-full mb-12">

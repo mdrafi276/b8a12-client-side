@@ -6,7 +6,7 @@ import { IoCarSportSharp } from "react-icons/io5";
 import "react-vertical-timeline-component/style.min.css";
 const Timeline = () => {
   return (
-    <div>
+    <div className="anime-one">
       <VerticalTimeline>
         <VerticalTimelineElement
           className="vertical-timeline-element--work    "

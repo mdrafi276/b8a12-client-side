@@ -4,15 +4,17 @@
 // import MenuItem from "./MenuItem";
 // import ToggleBtn from "../../Button/ToggleBtn";
 // Icons
-import { GrHome, GrLogout, GrUser } from "react-icons/gr";
+import { GrHome, GrList, GrLogin, GrLogout, GrUser, GrUserAdmin } from "react-icons/gr";
 // import { FcSettings } from "react-icons/fc";
 import { AiOutlineBars } from "react-icons/ai";
 // import { BsGraphUp } from "react-icons/bs";
 
 // import CreatorMenu from "../Menu/CreatorMenu";
 // import MenuItem from "../MenuItem";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Components/Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Sidebar = () => {
   const [toggle, setToggle] = useState(false);
@@ -22,6 +24,23 @@ const Sidebar = () => {
 //   const handleToggle = (event) => {
 //     setToggle(event.target.checked);
 //   };
+
+
+
+  const { user, logOut } = useContext(AuthContext);
+  const handleSignOut = () => {
+    logOut()
+      .then(() => {
+        Swal.fire({
+          title: "Success!",
+          text: "Successfully SignOut From Your Account",
+          icon: "success",
+          confirmButtonText: "Cool",
+        });
+      })
+      .catch();
+  };
+
   // Sidebar Responsive Handler
   const handleToggle = () => {
     setActive(!isActive);
@@ -59,43 +78,65 @@ const Sidebar = () => {
           /> */}
 
           <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-black border-2 hover:border-none transition-colors duration-300 transform      ">
-            <GrHome />
+            <GrUserAdmin />
 
-            <span className="mx-4 font-medium ">Home</span>
-          </buttone>
-          <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-black border-2 hover:border-none transition-colors duration-300 transform      ">
-            <GrUser />
-
-            <span className="mx-4 font-medium ">User</span>
+            <span className="mx-4 font-medium ">Admin</span>
           </buttone>
           <Link to="employeeLst">
             <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-black border-2 hover:border-none transition-colors duration-300 transform      ">
-              <GrLogout className="w-5 h-5 " />{" "}
+              <GrList className="w-5 h-5 " />{" "}
               <span className="mx-4 font-medium ">Employee list</span>
             </buttone>{" "}
           </Link>
           <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-black border-2 hover:border-none transition-colors duration-300 transform      ">
-            <GrLogout className="w-5 h-5 " />
+            <GrUser className="w-5 h-5 " />
 
-            <span className="mx-4 font-medium ">Logout</span>
+            <span className="mx-4 font-medium ">User</span>
           </buttone>
         </div>
 
         <div>
           <hr />
-
           {/* <menuitem
             // icon={FcSettings}
             label="Profile"
             // address="/dashboard/profile"
 
-          /> */}
+          /> */}{" "}
+          <Link to="/">
+            <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-black  hover:border-none transition-colors duration-300 transform      ">
+              <GrHome />
 
-          <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-gray-700 transition-colors duration-300 transform">
-            <GrLogout className="w-5 h-5" />
+              <span className="mx-4 font-medium ">Home</span>
+            </buttone>
+          </Link>
+          <Link to="/contactUs">
+            <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-black hover:border-none transition-colors duration-300 transform      ">
+              <GrHome />
 
-            <span className="mx-4 font-medium">Logout</span>
-          </buttone>
+              <span className="mx-4 font-medium ">Contact Us</span>
+            </buttone>
+          </Link>
+          {user ? (
+            <div>
+              <button
+                onClick={handleSignOut}
+                className="  flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-gray-700 transition-colors duration-300 transform "
+              >
+                <GrLogout className="w-5 h-5" />
+
+                <span className="mx-4 font-medium">Logout</span>
+              </button>
+            </div>
+          ) : (
+            <Link to="/login">
+              <buttone className=" flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-gray-700 transition-colors duration-300 transform">
+                <GrLogin className="w-5 h-5" />
+
+                <span className="mx-4 font-medium">Login</span>
+              </buttone>
+            </Link>
+          )}
         </div>
       </div>
     </>

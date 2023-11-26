@@ -6,7 +6,7 @@ import Navber from "../../Components/Navber/Navber";
 const Dashboard = () => {
   return (
     <div>
-      <div className="z-50 hidden md:block">
+      <div className="z-50  hidden md:block">
         <Navber></Navber>
       </div>
       <div className="max-w-7xl  mx-auto">

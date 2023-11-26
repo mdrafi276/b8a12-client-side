@@ -1,7 +1,10 @@
 import './Banner.css'
+import React from 'react';
+
 const Banner = () => {
-    return (
-      <div>
+  return (
+    <div>
+         <div>
         <div className="w-[100%]  md:-mt-[170px]">
           <video
             className="w-full md:h-[662px]   lg:h-[760px]"
@@ -42,7 +45,8 @@ const Banner = () => {
           </button>
         </div>
       </div>
-    );
+    </div>
+  );
 };
 
 export default Banner;

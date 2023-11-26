@@ -7,7 +7,7 @@ import profile from "../../../src/assets/user.png";
 import './Navber.css'
 import Headroom from "react-headroom";
 import { AuthContext } from "../Provider/AuthProvider";
-import { GrLogin, GrLogout } from "react-icons/gr";
+import {  GrLogout } from "react-icons/gr";
 const Navber = () => {
 
 
@@ -192,8 +192,8 @@ const Navber = () => {
                               </div>
                             ) : (
                               <Link to="/login">
-                                <buttone className=" justify-between ml-3 hover:text-black hover:underline  backdrop-blur  bg-transparent  text-white">
-                                  <GrLogin />
+                                <buttone className=" justify-between  hover:text-black hover:underline  backdrop-blur  bg-transparent  text-white">
+                                  Login
                                 </buttone>
                               </Link>
                             )}
