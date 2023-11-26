@@ -1,0 +1,355 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'poppins', sans-serif;
+ }
+
+
+
+ .section {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+     height: 100vh;
+     /* background: url(https://i.ibb.co/W6W8fnd/3586321-2588.jpg) no-repeat;
+      */
+    
+     background-size: cover;
+     background-position: center;
+     animation: animareBg 5s infinite;
+
+ }
+
+ @keyframes animareBg {
+     100% {
+         filter: hue-rotate(360deg);
+     }
+ }
+
+
+
+
+ @media (max-width: 478px) {
+     .login-box {
+         width: 100%;
+         height: 100vh;
+         border: none;
+         border-radius: 0;
+     }
+
+     .input-box {
+         width: 290px;
+     }
+ }
+
+ /* buttone animation  */
+ .btn-one {
+     /* background: rgba(255, 255, 255, 0.10); */
+
+     color: white;
+
+ }
+
+ .btn-one:hover {
+     background: linear-gradient(90deg, #08ff08, #50e3fc, #bc13fc, #03a9f4, #0ff0fc);
+     background-size: 500%;
+     z-index: 1;
+     border: none;
+     animation: blink 7s linear infinite;
+
+ }
+
+ @keyframes blink {
+     from {
+         background-position: 0%;
+
+     }
+
+     to {
+         background-position: 500%;
+
+     }
+
+ }
+
+ .btn-one::after {
+     content: "";
+     position: absolute;
+     left: -10px;
+     bottom: -10px;
+     right: -10px;
+     top: -10px;
+     background: inherit;
+     border-radius: 40px;
+     filter: blur(50px);
+     z-index: 0;
+
+ }
+
+ .btn-one:hover::after {
+     opacity: 1;
+     z-index: 1;
+
+ }
+
+ /* Text animation  */
+ .h-one {
+
+     background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);
+     background-size: 400%;
+
+
+
+
+
+     -webkit-text-fill-color: transparent;
+     /* -webkit-background-clip: text; */
+     animation: animate 10s linear infinite;
+
+ }
+
+ @keyframes animate {
+     0% {
+         background-position: 0%;
+     }
+
+     100% {
+         background-position: 400%;
+     }
+ }
+
+
+ btn-three {
+     /* background: rgba(255, 255, 255, 0.10); */
+
+     color: white;
+
+ }
+
+ .btn-three:hover {
+     background: linear-gradient(90deg, #08ff08, #50e3fc, #bc13fc, #03a9f4, #0ff0fc);
+     background-size: 500%;
+     z-index: 1;
+     border: none;
+     animation: blink 7s linear infinite;
+
+ }
+
+ @keyframes blink {
+     from {
+         background-position: 0%;
+
+     }
+
+     to {
+         background-position: 500%;
+
+     }
+
+ }
+
+ .btn-three::after {
+     content: "";
+     position: absolute;
+
+
+     background: inherit;
+
+     filter: blur(50px);
+     z-index: 0;
+
+ }
+
+ .btn-three:hover::after {
+     opacity: 1;
+     z-index: 1;
+
+ }
+ /* hover buttone  */
+ .c-buttone {
+     color: #000;
+     font-weight: 700;
+     font-size: 16px;
+     text-decoration: none;
+     padding: 0.9em 1.6em;
+     cursor: pointer;
+     
+     display: inline-block;
+     vertical-align: middle;
+     position: relative;
+     z-index: 1;
+ }
+
+ .c-buttone--gooey {
+     color: #06c8d9;
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     border: 4px solid #06c8d9;
+     border-radius: 0;
+     position: relative;
+     transition: all 700ms ease;
+ }
+
+ .c-buttone--gooey .c-button__blobs {
+     height: 100%;
+     filter: url(#goo);
+     overflow: hidden;
+     position: absolute;
+     top: 0;
+     left: 0;
+     bottom: -3px;
+     right: -1px;
+     z-index: -1;
+ }
+
+ .c-buttone--gooey .c-button__blobs div {
+     background-color: #06c8d9;
+     width: 34%;
+     height: 100%;
+     border-radius: 100%;
+     position: absolute;
+     transform: scale(1.4) translateY(125%) translateZ(0);
+     transition: all 700ms ease;
+ }
+
+ .c-buttone--gooey .c-button__blobs div:nth-child(1) {
+     left: -5%;
+ }
+
+ .c-buttone--gooey .c-button__blobs div:nth-child(2) {
+     left: 30%;
+     transition-delay: 60ms;
+ }
+
+ .c-buttone--gooey .c-button__blobs div:nth-child(3) {
+     left: 66%;
+     transition-delay: 25ms;
+ }
+
+ .c-buttone--gooey:hover {
+     color: black;
+ }
+
+ .c-buttone--gooey:hover .c-button__blobs div {
+     transform: scale(1.4) translateY(0) translateZ(0);
+ }
+ /* another btuuon  */
+ .btn-1 {
+     width: 6.5em;
+     height: 2.3em;
+     margin: 0.5em;
+    background: transparent;
+
+     color: white;
+    
+     border-radius: 0.625em;
+     font-size: 20px;
+     font-weight: bold;
+     cursor: pointer;
+     position: relative;
+     z-index: 1;
+     overflow: hidden;
+ }
+
+ buttone:hover {
+     color: black;
+ }
+
+ buttone:after {
+     content: "";
+     background: white;
+     position: absolute;
+     z-index: -1;
+     left: -20%;
+     right: -20%;
+     top: 0;
+     bottom: 0;
+     transform: skewX(-45deg) scale(0, 1);
+     transition: all 0.5s;
+ }
+
+ buttone:hover:after {
+     transform: skewX(-45deg) scale(1, 1);
+     -webkit-transition: all 0.5s;
+     transition: all 0.5s;
+ }
+
+ /* Text animation  */
+ .h-one {
+
+     background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);
+     background-size: 400%;
+
+
+
+
+
+     -webkit-text-fill-color: transparent;
+     -webkit-background-clip: text;
+     animation: animate 10s linear infinite;
+
+ }
+
+ @keyframes animate {
+     0% {
+         background-position: 0%;
+     }
+
+     100% {
+         background-position: 400%;
+     }
+ }
+
+ 
+ /* animation one framermontin */
+ 
+ /* video hover animation  */
+ *::selection {
+     color: white;
+     background-color:white
+ }
+
+ /* .main-div {
+     height: 130vh;
+ }
+
+ .video-container {
+     height: 300px;
+     width: 100vw;
+ }
+
+ .video {
+     width: 100vw;
+ } */
+
+ /* .video-container .play {
+     padding: 1.5vw 1vw;
+     /* border-radius: 50%; */
+     /* background-color: white;
+     font-size: 1.3vw;
+     color: black; */
+
+     /* position: fixed; */
+     /* text-transform: uppercase;
+     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+     opacity: 0;
+     scale: 0;
+
+ } */ 
+
+ /* #page2 {
+
+     height: 100vh;
+     width: 100vw;
+     display: flex;
+     align-items: center;
+     justify-content: space-evenly;
+     position: relative;
+
+
+ } */
+ 

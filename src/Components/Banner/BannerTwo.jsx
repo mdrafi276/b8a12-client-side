@@ -20,7 +20,7 @@ const CopyBanner = () => {
 
         <div className=" w-[250px] mt-10 md:mt-0 md:w-[300px] lg:w-[500px] ">
           <img
-            className="w-full "
+            className="w-full"
             src="https://i.ibb.co/C0mKsKn/google-pixal-72.jpg"
           />
         </div>
