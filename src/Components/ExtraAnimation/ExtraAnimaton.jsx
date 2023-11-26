@@ -2,10 +2,13 @@ import './ExtraAnimation.css'
 const ExtraAnimaton = () => {
     return (
       <div>
+       <div className='flex justify-center'>
+        <h1 className='text2xl md:text4xl lg:text-6xl text-white h-one pt-10  absolute z-20'>Our Reword</h1>
+      </div>
         <div className="bg-black lg:block hidden pt-[12.25rem] pb-[40.25rem] d-flex justify-content-center align-items-center">
           <div className="obj w-[500Px] h-[500px]  mx-auto">
             <div className="objchild">
-              <div>
+              <div> 
                 <div className="container ">
                   <svg
                     className="svg-icon"
@@ -27,11 +30,11 @@ const ExtraAnimaton = () => {
                 </div>
               </div>
               <span className="inn6">
-                <img
+                {/* <img
                   className="w-full hover:animate-spin "
                   src="../../../src/assets/user.png"
                   alt=""
-                />{" "}
+                />{" "} */}
               </span>
             </div>
           </div>
