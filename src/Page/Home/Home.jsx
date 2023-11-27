@@ -20,6 +20,8 @@ const Home = () => {
             <ExtraAnimaton></ExtraAnimaton>
             <AddRiview></AddRiview>
             <Testimonial></Testimonial>
+
+            
             <Footer></Footer>
         </div>
     );

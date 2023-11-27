@@ -1,6 +1,6 @@
 import "./banner.css"
 
-
+import vd from "../../../src/Components/Banner/background_-_23088 (720p).mp4";
 const Banner = () => {
   return (
     <div>
@@ -10,7 +10,7 @@ const Banner = () => {
             className="w-full md:h-[662px]   lg:h-[760px]"
             muted
             autoPlay
-            src="../../../src/Components/Banner/background_-_23088 (720p).mp4"
+            src={vd}
           ></video>
         </div>
         <div className="absolute lg:-mt-[500px] md:ml-[80px] -mt-[203px] md:-mt-[460px] md:w-[600px] lg:w-[900px] lg:ml-[227px] md:h-[300px] lg:h-[400px]">

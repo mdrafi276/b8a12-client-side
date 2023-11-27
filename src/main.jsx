@@ -14,6 +14,7 @@ import Dashboard from './Page/Dashbord/Dashbord';
 import RegisterTwo from './Page/Register/RegisterTwo';
 import EmployeeLst from './Page/Dashbord/EmployeeLst/EmployeeLst';
 import PrivetRoute from './Components/Provider/PrivetRoute';
+import User from './Page/Dashbord/Users/User';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -42,11 +43,23 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard",
-        element: <PrivetRoute><Dashboard></Dashboard>,</PrivetRoute>,
+        element: (
+          <PrivetRoute>
+            <Dashboard></Dashboard>,
+          </PrivetRoute>
+        ),
         children: [
           {
             path: "employeeLst",
             element: <EmployeeLst></EmployeeLst>,
+          },
+          {
+            path: "users",
+            element: (
+              <PrivetRoute>
+                <User></User>
+              </PrivetRoute>
+            ),
           },
         ],
       },

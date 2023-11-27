@@ -7,7 +7,7 @@ const Testimonial = () => {
   const [corosoulData, setCorousolData] = useState();
   console.log(corosoulData);
   useEffect(() => {
-    fetch("/public/Rivew.json")
+    fetch("http://localhost:5000/riview")
       .then((res) => res.json())
       .then((data) => setCorousolData(data));
   }, []);
