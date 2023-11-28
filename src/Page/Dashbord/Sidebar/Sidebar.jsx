@@ -4,7 +4,7 @@
 // import MenuItem from "./MenuItem";
 // import ToggleBtn from "../../Button/ToggleBtn";
 // Icons
-import { GrHeroku, GrHome, GrHomeRounded, GrList, GrLogin, GrLogout, GrUser, GrUserAdmin } from "react-icons/gr";
+import { GrFormViewHide, GrHeroku, GrHome, GrHomeRounded, GrList, GrLogin, GrLogout, GrUser, GrUserAdmin } from "react-icons/gr";
 // import { FcSettings } from "react-icons/fc";
 import { AiOutlineBars } from "react-icons/ai";
 // import { BsGraphUp } from "react-icons/bs";
@@ -77,26 +77,32 @@ const Sidebar = () => {
 
           /> */}
 
-          <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-black border-2 hover:border-none transition-colors duration-300 transform      ">
+          <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-black border border-white hover:border-none transition-colors duration-300 transform      ">
             <GrUserAdmin />
 
             <span className="mx-4 font-medium ">Admin</span>
           </buttone>
-          <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-black border-2 hover:border-none transition-colors duration-300 transform      ">
+          <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-black border border-white hover:border-none transition-colors duration-300 transform      ">
             <GrHeroku className="w-5 h-5 " />
 
             <span className="mx-4 font-medium ">HR</span>
           </buttone>
           <Link to="users">
-          
-            <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-black border-2 hover:border-none transition-colors duration-300 transform      ">
+            <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-black border border-white hover:border-none transition-colors duration-300 transform      ">
               <GrUser className="w-5 h-5 " />
 
               <span className="mx-4 font-medium ">User</span>
             </buttone>
           </Link>
+          <Link to="dashbordRiview">
+            <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white    hover:text-black border border-white hover:border-none transition-colors duration-300 transform      ">
+              <GrFormViewHide className="w-5 h-5 " />
+
+              <span className="mx-4 font-medium ">Add Riview</span>
+            </buttone>
+          </Link>
           <Link to="employeeLst">
-            <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-black border-2 hover:border-none transition-colors duration-300 transform      ">
+            <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white    hover:text-black  hover:border-none transition-colors duration-300 transform      ">
               <GrList className="w-5 h-5 " />{" "}
               <span className="mx-4 font-medium ">Employee list</span>
             </buttone>{" "}
@@ -127,18 +133,18 @@ const Sidebar = () => {
           </Link>
           {user ? (
             <div>
-              <button
+              <buttone
                 onClick={handleSignOut}
-                className="  flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-gray-700 transition-colors duration-300 transform "
+                className="  flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-black hover:border-none transition-colors duration-300 transform    "
               >
                 <GrLogout className="w-5 h-5" />
 
                 <span className="mx-4 font-medium">Logout</span>
-              </button>
+              </buttone>
             </div>
           ) : (
             <Link to="/login">
-              <buttone className=" flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-gray-700 transition-colors duration-300 transform">
+              <buttone className=" flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-black hover:border-none transition-colors duration-300 transform    ">
                 <GrLogin className="w-5 h-5" />
 
                 <span className="mx-4 font-medium">Login</span>

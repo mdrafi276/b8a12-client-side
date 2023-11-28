@@ -4,55 +4,71 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Components/Provider/AuthProvider";
 import { useContext, useState } from "react";
 import { GrFilter,  } from "react-icons/gr";
+import { imageUpload } from "../../Components/Api/Utisl";
+import useAxiosPublic from "../Login/UseAxios/UseAxiosPublic";
 
+// import useAxios from "../Login/UseAxios/axiosSecure";
+// import axiosSecure from "../Login/UseAxios/axiosSecure";
+// import useAxios from "../Login/UseAxios/axiosSecure";
+// import { getToken } from "../Login/UseAxios/UseAxiosPublic";
+// import axios from "axios"
 const RegisterTwo = () => {
+      const axiosPublic = useAxiosPublic();
+
+  const [selectedRole, setSelectedRole] = useState("")
   // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState("");
   const { createUser } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
 
-  const handleRegister = (e) => {
-    e.preventDefault();
-    const form = e.target;
+
+  const handleChange =(event) =>{
+        setSelectedRole(event.target.value);
+
+  }
+  const handleRegister = async event => {
+    event.preventDefault();
+    const form = event.target;
     const name = form.name.value;
     // const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    const photo = form.photo.value;
+    const photo = form.photo.files[0];
+   const imageData = await imageUpload(photo);
+   const image = await (imageData?.data.display_url);
+
+
+  
     const bankAccount = form.bankAccount.value;
     const salary = form.salary.value;
-    console.log(name, photo, bankAccount, salary, email, password);
-   const newBrand = {
+    console.log(
       name,
-      
-      email,
-      photo,
-      salary,
+      image,
       bankAccount,
+      salary,
+      email,
+      password,
+      selectedRole
+    );
+   const newUser = {
+     name,
+
+     email,
+     image,
+     salary,
+     bankAccount,
+     selectedRole,
+   };
+    
+   axiosPublic.post("/users", newUser).then((res) => {
+     if (res.data.insertedId) {
+       console.log(res.data);
+
+     
       
-    };
-    console.log(newBrand);
-    console.log(newBrand);
-    fetch("http://localhost:5000/users", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newBrand),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        // if (data.insertedId) {
-        //   Swal.fire({
-        //     icon: "success",
-        //     title: "success",
-        //     text: "Register secess!",
-        //     footer: '<a href="">Why do I have this issue?</a>',
-        //   });
-        // }
-      });
+     }
+   });
 
     setError("");
 
@@ -77,12 +93,16 @@ const RegisterTwo = () => {
       );
       return;
     } else {
-      createUser(email, password)
+
+    
+     createUser(email, password)
+  //     await getToken(result?.user?.email);
+  //  console.log(getToken)
+  //  alert("token aso ",)
         .then((result) => {
           updateProfile(result.user, {
             displayName: name,
-            photoURL: photo,
-            
+            photoURL: image,
           }).then(() => {
             Swal.fire({
               icon: "Success!",
@@ -175,34 +195,37 @@ const RegisterTwo = () => {
             {/* input brind */}
             <div className="lg:w-[450px]">
               <div className="relative h-10 lg:h-14 w-full  md:min-w-[200px]">
+                <select
+                  onChange={handleChange}
+                  className="select  select-success  w-full mx-auto  bg-transparent"
+                >
+                  <option disabled selected>
+                    Pick your favorite anime
+                  </option>
+                  <option className=" text-black">HR</option>
+                  <option className=" text-black">Employee </option>
+                  {/* <option  className="">Low to High </option> */}
+                </select>
+
+                <label className="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 duration-300 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-pink-500 duration-300 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-pink-500 duration-300 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-pink-500 duration-300 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 duration-300"></label>
+              </div>
+            </div>
+            {/* {/* input short */}
+            <div className="lg:w-[450px]">
+              <div className="relative h-10 lg:h-14 w-full  md:min-w-[200px]">
                 <input
-                  type="text"
+                  type="number"
                   required
                   name="salary"
                   className="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 duration-300 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                   placeholder=" "
                 />
                 <label className="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 duration-300 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-pink-500 duration-300 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-pink-500 duration-300 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-pink-500 duration-300 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 duration-300">
-                  Rool
+                  Salary
                 </label>
               </div>
             </div>
-            {/* {/* input short */}
             {/* <div className="lg:w-[450px]">
-              <div className="relative h-10 lg:h-14 w-full  md:min-w-[200px]">
-                <input
-                  type="text"
-                  required
-                  name="rating"
-                  className="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 duration-300 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
-                  placeholder=" "
-                />
-                <label className="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 duration-300 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-pink-500 duration-300 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-pink-500 duration-300 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-pink-500 duration-300 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 duration-300">
-                  Your Ratting
-                </label>
-              </div>
-            </div>
-            <div className="lg:w-[450px]">
               <div className="relative h-10 lg:h-14 w-full  md:min-w-[200px]">
                 <input
                   type="text"
@@ -237,7 +260,6 @@ const RegisterTwo = () => {
                 <input
                   type="file"
                   name="photo"
-                  required
                   className="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 duration-300 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                   placeholder=" "
                 />

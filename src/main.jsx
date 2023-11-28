@@ -6,7 +6,6 @@ import LeyOut from './LeyOut/LeyOut';
 import Home from './Page/Home/Home';
 import { AuthProvider } from './Components/Provider/AuthProvider';
 import Login from './Page/Login/Login';
-import Register from './Page/Register/Register';
 import Profile from './Page/Profile/Profile';
 import ContactUs from './Page/ContactUs/ContactUs';
 import Error from './Erroe/Error';
@@ -15,6 +14,7 @@ import RegisterTwo from './Page/Register/RegisterTwo';
 import EmployeeLst from './Page/Dashbord/EmployeeLst/EmployeeLst';
 import PrivetRoute from './Components/Provider/PrivetRoute';
 import User from './Page/Dashbord/Users/User';
+import DashbordRiview from './Page/Dashbord/DashbordRiview/DashbordRiview';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -58,6 +58,14 @@ const router = createBrowserRouter([
             element: (
               <PrivetRoute>
                 <User></User>
+              </PrivetRoute>
+            ),
+          },
+          {
+            path: "dashbordRiview",
+            element: (
+              <PrivetRoute>
+               <DashbordRiview></DashbordRiview>
               </PrivetRoute>
             ),
           },

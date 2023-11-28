@@ -1,8 +1,8 @@
 .wrap {
     position: relative;
-    --white: #e3e3e3;
-    --bc: rgb(203, 46, 79);
-    --bc-al: rgba(203, 46, 79, 0.6);
+    --white: #ffffff;
+    --bc: rgb(72, 21, 32);
+    --bc-al: rgba(26, 16, 78, 0.393);
 }
 
 .carde {

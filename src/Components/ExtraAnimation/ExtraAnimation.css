@@ -26,6 +26,7 @@
     /* background: radial-gradient(center center, farthest-side , #9993, transparent); */
     filter: blur(20px);
     box-shadow: 0 0 200px 15px white;
+
     transform: rotateX(90deg) scale(1.1) translateZ(-120px);
 }
 

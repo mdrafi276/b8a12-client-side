@@ -1,43 +1,44 @@
-// import Swal from "sweetalert2";
-import Swal from 'sweetalert2';
-import './AddRiview.css'
-const AddRiview = () => {
-  const handleriview = (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const name = form.name.value;
-    const image = form.image.value;
-    const feedback = form.feedback.value;
-    const newRiview = {
-      feedback,
-      name,
-      image,
-    };
 
-    fetch("http://localhost:5000/riview", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newRiview),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.insertedId) {
-          Swal.fire({
-            icon: "success",
-            title: "success",
-            text: "Rieview succesfull",
-            footer: '<a href="">Why do I have this issue?</a>',
-          });
-        }
-      });}
-  
-  return (
-    <div className="anime">
+import Swal from 'sweetalert2';
+
+const DashbordRiview = () => {
+    const handleriview = (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const name = form.name.value;
+      const image = form.image.value;
+      const feedback = form.feedback.value;
+      const newRiview = {
+        feedback,
+        name,
+        image,
+      };
+
+      fetch("http://localhost:5000/riview", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newRiview),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.insertedId) {
+            Swal.fire({
+              icon: "success",
+              title: "success",
+              text: "Rieview succesfull",
+              footer: '<a href="">Why do I have this issue?</a>',
+            });
+          }
+        });
+    };
+    return (
+        <div>
+            <div className="anime-one">
       <div className="text-gray-600 body-font relative">
-        <div className=" px-5 py-24 mx-auto">
+        <div className=" px-5  mx-auto">
           <div className="flex flex-col text-center w-full mb-12">
             <h1 className="sm:text-3xl md:text-5xl h-one  font-bold title-font mb-4 text-gray-900">
               Add Riview
@@ -114,8 +115,8 @@ const AddRiview = () => {
         </div>
       </div>
     </div>
-  );
+        </div>
+    );
 };
 
-
-export default AddRiview;
+export default DashbordRiview;

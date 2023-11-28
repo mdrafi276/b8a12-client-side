@@ -1,4 +1,5 @@
 
+import { GrList } from 'react-icons/gr';
 import './EmployeeList.css'
 const EmployeeLst = () => {
     return (
@@ -6,9 +7,10 @@ const EmployeeLst = () => {
         <div className="wrap w-full   ">
           <div className="circ-1 md:block hidden"></div>
           <div className="circ-2 md:block hidden"></div>
-          <div className="carde">
-            <div className="tops w-full ">
-              <li className="u-l">User list:</li>
+          <div className="carde md:min-h-full min-h-[100vh]">
+            <div className="tops w-full flex items-center ">
+              <GrList/>
+              <span className="u-l">Employee List</span>
             </div>
             <div className="bot w-full  before:w-full">
               <ul className="users">
@@ -21,7 +23,6 @@ const EmployeeLst = () => {
                     <button className='md:textarea-sm text-[15px]'>button</button>
                     <button className='md:textarea-sm text-[15px]'>button</button>
                     <button className='md:textarea-sm text-[15px]'>button</button>
-                 
                   </div>
                 </div>
                 <div className="employee">

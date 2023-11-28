@@ -12,6 +12,7 @@ const Navber = () => {
 
 
   const { user, logOut } = useContext(AuthContext);
+  
   const handleSignOut = () => {
     logOut()
       .then(() => {
@@ -162,10 +163,11 @@ const Navber = () => {
                         <div className="top"></div>
                         <div className="left side"></div>
                         <div className="right side"></div>
-                        <div className="title w-[50px]">
+                        <div className="title  w-[50px]">
                           <label tabIndex={0} className=" ">
                             <img
-                              className="rounded-full w-full bg-cover"
+                              className="rounded-full w-full bg
+                              -cover"
                               src={user?.photoURL ? user.photoURL : profile}
                               alt=""
                             />

@@ -13,8 +13,8 @@ const Profile = () => {
           <div className=" w-full lg:w-[300px] min-h-[80vh] bg-[#0F0D21]">
             <div className="group before:hover:scale-95 before:hover:h-72  before:w-full lg:before:hover:w-80 before:hover:rounded-b-2xl before:transition-all before:duration-500 before:content-['']  before:h-[14rem] before:rounded-t-2xl before:bg-gradient-to-bl from-[#030F1C] via-[#2A7A82] to-[#0B5653] before:absolute before:top-0 w-full lg:w-[19rem] h-[33rem] relative bg-[#0F0D21] flex flex-col items-center justify-center gap-2 text-center rounded-2xl overflow-hidden">
               <div className="w-28 h-28  mt-8 rounded-full border-4 border-slate-50 z-10 group-hover:scale-150 group-hover:-translate-x-24  group-hover:-translate-y-20 transition-all duration-500">
-                <div className="  w-full rounded-full">
-                  <label tabIndex={0} className=" ">
+                <div className="  w-full ">
+                  <label tabIndex={0} className="  ">
                     <img
                       className="rounded-full w-full bg-cover"
                       src={user?.photoURL ? user.photoURL : profile}
