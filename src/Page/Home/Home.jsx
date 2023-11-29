@@ -8,8 +8,6 @@ import Testimonial from "../../Components/Testimonial/Testimonial";
 import Timeline from "../../Components/Timeline/Timeline";
 import AddRiview from "../AddRiview/AddRiview";
 
-
-
 const Home = () => {
     return (
         <div>
@@ -19,6 +17,7 @@ const Home = () => {
             <Timeline></Timeline>
             <ExtraAnimaton></ExtraAnimaton>
             <AddRiview></AddRiview>
+            
             <Testimonial></Testimonial>
 
             

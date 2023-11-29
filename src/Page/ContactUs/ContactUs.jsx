@@ -1,6 +1,41 @@
+import Swal from "sweetalert2";
 import Navber from "../../Components/Navber/Navber";
 
 const ContactUs = () => {
+  const handlSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const number = form.number.value;
+    const email = form.email.value;
+    const feedback = form.feedback.value;
+    const newRiview = {
+      feedback,
+      name,
+      number,
+      email,
+    };
+
+    fetch("http://localhost:5000/contact", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newRiview),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            icon: "success",
+            title: "success",
+            text: " succesfull",
+            footer: '<a href="">Why do I have this issue?</a>',
+          });
+        }
+      });
+  };
     return (
         <div>
         <Navber></Navber>
@@ -17,7 +52,7 @@ const ContactUs = () => {
           </div>
           <div className="lg:w-1/2 md:w-2/3 mx-auto">
             <form
-            //  onSubmit={handleriview}
+             onSubmit={handlSubmit}
              >
               <div className="flex flex-wrap -m-2">
                 <div className="p-2 w-1/2">

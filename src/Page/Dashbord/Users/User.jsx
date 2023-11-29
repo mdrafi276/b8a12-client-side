@@ -1,23 +1,48 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import UserMap from "./UserMap";
 import { GrList } from "react-icons/gr";
 import Swal from "sweetalert2";
+import useAxios from "../../Login/UseAxios/axiosSecure";
+import { useQuery } from "@tanstack/react-query";
 
 
 const User = () => {
+  const axiossecure = useAxios()
+  const {data: users = [], refetch} = useQuery({
+    queryKey:['users'],
+    queryFn:async () =>{
+      const res = await axiossecure.get('/users')
+      return res.data;
+    }
+  })
 
   const [deleteData, setdeleteData] = useState(null);
-   const [userData, setUserData] = useState();
+  //  const [userData, setUserData] = useState();
 
    
-   useEffect(() => {
-     fetch("http://localhost:5000/users")
-       .then((res) => res.json())
-       .then((data) => setUserData(data));
-   }, []);
-
+  //  useEffect(() => {
+  //    fetch("http://localhost:5000/users")
+  //      .then((res) => res.json())
+  //      .then((data) => setUserData(data));
+  //  }, []);
+const handleMakeAdmin = (id) => {
+  axiossecure.patch(`/users/admin/${id}`).then((res) => {
+    console.log(res.data);
+    if (res.data.modifiedCount > 0) {
+      refetch();
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: `  is an Admin Now!`,
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
+  });
+};
     const handleDelete = (_id) => {
       console.log(_id);
+      refetch()
       Swal.fire({
         title: "Are you sure?",
         text: "You won't be able to revert this!",
@@ -67,9 +92,12 @@ const User = () => {
               <hr />
 
               <div>
-                {userData?.map((dataUser) => (
+                {users?.map((dataUser) => (
                   <UserMap
                     dataUser={dataUser}
+                    
+                   
+                    handleMakeAdmin={handleMakeAdmin}
                     handleDelete={handleDelete}
                     key={dataUser._id}
                   ></UserMap>

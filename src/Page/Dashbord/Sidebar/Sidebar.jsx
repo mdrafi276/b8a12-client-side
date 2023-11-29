@@ -1,10 +1,5 @@
-// import { useState } from "react";
-// Components
 
-// import MenuItem from "./MenuItem";
-// import ToggleBtn from "../../Button/ToggleBtn";
-// Icons
-import { GrFormViewHide, GrHeroku, GrHome, GrHomeRounded, GrList, GrLogin, GrLogout, GrUser, GrUserAdmin } from "react-icons/gr";
+import { GrContact, GrFormViewHide, GrHeroku, GrHome,  GrList, GrLogin, GrLogout, GrUser, GrUserAdmin } from "react-icons/gr";
 // import { FcSettings } from "react-icons/fc";
 import { AiOutlineBars } from "react-icons/ai";
 // import { BsGraphUp } from "react-icons/bs";
@@ -15,15 +10,27 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Components/Provider/AuthProvider";
 import Swal from "sweetalert2";
+import useAdmin from "../../Login/UseAxios/UseAdmin";
+import useHr from "../../Login/UseAxios/UseHr";
+// import useRole from "../../../Components/Api/Auth.js/UserRole";
 
 const Sidebar = () => {
-  const [toggle, setToggle] = useState(false);
+  const [isHR] = useHr()
+  // console.log(isHR);
+  const hrRole = isHR;
+  hrRole === true;
+  const [isAdmin, isAdminLoading] = useAdmin();
+  console.log("Admin tomi koi ---->  Ei je vaiya ami ", isAdmin);
+  
+    const adminRole = isAdmin;
+    adminRole === true;
+  
+  
+  
+  
   const [isActive, setActive] = useState(false);
 
-  //   For guest/host menu item toggle button
-  // const handleToggle = (event) => {
-  //   setToggle(event.target.checked);
-  // };
+  
 
 
 
@@ -70,53 +77,64 @@ const Sidebar = () => {
         <div className=" mt-10">
           <hr />
 
-          {/* <menuitem
-            // icon={FcSettings}
-            label="Profile"
-            // address="/dashboard/profile"
+          {adminRole && !hrRole && (
+            <Link to="/dashboard/users">
+              <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-black border border-white hover:border-none transition-colors duration-300 transform      ">
+                <GrUser className="w-5 h-5 " />
 
-          /> */}
+                <span className="mx-4 font-medium ">User</span>
+              </buttone>
+            </Link>
+          )}
 
-          <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-black border border-white hover:border-none transition-colors duration-300 transform      ">
-            <GrUserAdmin />
+          {hrRole && !adminRole && (
+            <Link to="/dashboard/users">
+              <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-black border border-white hover:border-none transition-colors duration-300 transform      ">
+                <GrUser className="w-5 h-5 " />
 
-            <span className="mx-4 font-medium ">Admin</span>
-          </buttone>
-          <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-black border border-white hover:border-none transition-colors duration-300 transform      ">
-            <GrHeroku className="w-5 h-5 " />
-
-            <span className="mx-4 font-medium ">HR</span>
-          </buttone>
-          <Link to="users">
-            <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-black border border-white hover:border-none transition-colors duration-300 transform      ">
-              <GrUser className="w-5 h-5 " />
-
-              <span className="mx-4 font-medium ">User</span>
-            </buttone>
-          </Link>
-          <Link to="dashbordRiview">
+                <span className="mx-4 font-medium ">User</span>
+              </buttone>
+            </Link>
+          )}
+          <Link to="/dashboard/dashbordRiview">
             <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white    hover:text-black border border-white hover:border-none transition-colors duration-300 transform      ">
               <GrFormViewHide className="w-5 h-5 " />
 
               <span className="mx-4 font-medium ">Add Riview</span>
             </buttone>
           </Link>
-          <Link to="employeeLst">
+          {hrRole && !adminRole && (
+            <Link to="/dashboard/employeeLst">
+              <buttone className="flex w-full items-center border border-white px-4 py-2 mt-5 text-white    hover:text-black  hover:border-none transition-colors duration-300 transform      ">
+                <GrList className="w-5 h-5 " />{" "}
+                <span className="mx-4 font-medium ">Employee list</span>
+              </buttone>{" "}
+            </Link>
+          )}
+          {adminRole && !hrRole && (
+            <Link to="/dashboard/employeeLst">
+              <buttone className="flex w-full items-center border border-white px-4 py-2 mt-5 text-white    hover:text-black  hover:border-none transition-colors duration-300 transform      ">
+                <GrList className="w-5 h-5 " />{" "}
+                <span className="mx-4 font-medium ">Employee list</span>
+              </buttone>{" "}
+            </Link>
+          )}
+          {/* <Link to="/dashboard/employeeLst">
             <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white    hover:text-black  hover:border-none transition-colors duration-300 transform      ">
               <GrList className="w-5 h-5 " />{" "}
               <span className="mx-4 font-medium ">Employee list</span>
             </buttone>{" "}
+          </Link> */}
+          <Link to="/profile">
+            <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-black border border-white hover:border-none transition-colors duration-300 transform      ">
+              <span className="mx-4 font-medium "> Profile</span>
+            </buttone>
           </Link>
         </div>
 
         <div>
           <hr />
-          {/* <menuitem
-            // icon={FcSettings}
-            label="Profile"
-            // address="/dashboard/profile"
 
-          /> */}{" "}
           <Link to="/">
             <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-black  hover:border-none transition-colors duration-300 transform      ">
               <GrHome />
@@ -126,7 +144,7 @@ const Sidebar = () => {
           </Link>
           <Link to="/contactUs">
             <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-black hover:border-none transition-colors duration-300 transform      ">
-              <GrHome />
+              <GrContact />
 
               <span className="mx-4 font-medium ">Contact Us</span>
             </buttone>

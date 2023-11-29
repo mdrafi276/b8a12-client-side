@@ -15,6 +15,17 @@ import EmployeeLst from './Page/Dashbord/EmployeeLst/EmployeeLst';
 import PrivetRoute from './Components/Provider/PrivetRoute';
 import User from './Page/Dashbord/Users/User';
 import DashbordRiview from './Page/Dashbord/DashbordRiview/DashbordRiview';
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from "@tanstack/react-query";
+import UserDetails from './Page/Dashbord/UserDetails/UserDetails';
+import UserHome from './Page/Dashbord/UserHome';
+import Payment from './Page/Dashbord/UserDetails/Payment/Payment';
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -35,11 +46,21 @@ const router = createBrowserRouter([
       },
       {
         path: "/contactUs",
-        element: <ContactUs></ContactUs>,
+        element: (
+          <PrivetRoute>
+            {" "}
+            <ContactUs></ContactUs>
+          </PrivetRoute>
+        ),
       },
       {
         path: "/profile",
-        element: <Profile></Profile>,
+        element: (
+          <PrivetRoute>
+            {" "}
+            <Profile></Profile>
+          </PrivetRoute>
+        ),
       },
       {
         path: "/dashboard",
@@ -54,6 +75,11 @@ const router = createBrowserRouter([
             element: <EmployeeLst></EmployeeLst>,
           },
           {
+            path: "dashboardUser",
+            element: <UserHome></UserHome>,
+          },
+
+          {
             path: "users",
             element: (
               <PrivetRoute>
@@ -65,19 +91,35 @@ const router = createBrowserRouter([
             path: "dashbordRiview",
             element: (
               <PrivetRoute>
-               <DashbordRiview></DashbordRiview>
+                <DashbordRiview></DashbordRiview>
               </PrivetRoute>
             ),
           },
         ],
       },
+      {
+        path: "details/:id",
+        element: (
+          <PrivetRoute>
+            <UserDetails></UserDetails>
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "payment",
+        element: <Payment></Payment>,
+      },
     ],
   },
 ]);
+
+const queryClient = new QueryClient();
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </QueryClientProvider>
   </React.StrictMode>
 );

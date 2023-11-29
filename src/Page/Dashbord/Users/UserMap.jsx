@@ -1,13 +1,19 @@
-import { GrCut, GrList } from "react-icons/gr";
+import {   FaTrashAlt, FaUsers } from "react-icons/fa";
+import { } from "react-icons/gr";
+import useAdmin from "../../Login/UseAxios/UseAdmin";
+// import User from "./User";
 
-const UserMap = ({ dataUser, handleDelete }) => {
-  const { name, image , _id} = dataUser;
+const UserMap = ({ dataUser, handleDelete, user, handleMakeAdmin }) => {
+  const [isAdmin] = useAdmin()
+  const role = isAdmin;
+  role === true;
+  const { name, image, _id, selectedRole } = dataUser;
 
   return (
     <div>
       <div className="bot w-full  before:w-full">
         <ul className="users">
-          <div className="employee  flex flex-col md:flex-row justify-between">
+          <div className="employee  flex  md:flex-row justify-between">
             <div className="flex gap-2 items-center ">
               <div className="w-[50px]">
                 <img className="rounded-full bg-cover" src={image} alt="" />
@@ -16,17 +22,25 @@ const UserMap = ({ dataUser, handleDelete }) => {
                 <li className="employee-name md:text-[17px] lg:text-xl text-[15px]">
                   {name}
                 </li>
-                <li className="employee-occupation">Marketing Manager</li>
               </div>
             </div>
-            <div className="flex  gap-20 flex-row  md:gap-5">
+            <div className="flex items-center  flex-row  md:gap-5">
               <button
                 onClick={() => handleDelete(_id)}
                 className="md:textarea-sm hover:scale-125 duration-300  text-[15px]"
               >
-                <GrCut className="w-4" />
+                <FaTrashAlt className="w-4" />
               </button>
-              <button className="md:textarea-sm text-[15px]">Admin</button>
+              {selectedRole === "admin" ? (
+                "admin "
+              ) : (
+                <button
+                  onClick={() => handleMakeAdmin(_id)}
+                  className="btn btn-lg bg-transparent border-none hover:bg-transparent "
+                >
+                  <FaUsers className=" text-2xl" />
+                </button>
+              )}
             </div>
           </div>
         </ul>

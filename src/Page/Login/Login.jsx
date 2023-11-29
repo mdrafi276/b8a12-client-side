@@ -4,9 +4,13 @@ import { FaGoogle, FaRegEnvelope, FaUnlock } from "react-icons/fa";
 import { AuthContext } from "../../../src/Components/Provider/AuthProvider";
 import "./Login.css";
 import { useContext } from "react";
+import useAxiosPublic from "./UseAxios/UseAxiosPublic";
+import useAxios from "./UseAxios/axiosSecure";
 
 
 const Login = () => {
+  const axiosPublic = useAxiosPublic()
+  const axiosSecure = useAxios()
   const { signIn, googleLogin } = useContext(AuthContext);
   const location = useLocation();
   // console.log("locatin page is comming  ", location);
@@ -31,21 +35,7 @@ const Login = () => {
 
         navigate(location?.state ? location.state : "/");
       })
-      //  Swal.fire("Login success........");
-      // .then(result => {
-      //   const loggedInUser = result.user;
-      //   console.log(loggedInUser);
-
-      //   const user = {email};
-      //   axios.post("http://localhost:5000/jwt", user ,{withCredentials:true})
-      //   .then(res =>{
-      //     console.log(res.data);
-      //     if(res.data.success){
-      //       navigate(location?.state ? location?.state : '/')
-      //     }
-      //   })
-
-      // })
+  
       .catch((error) => {
         Swal.fire({
           icon: "error",
@@ -58,14 +48,25 @@ const Login = () => {
   //   google login
   const hangleGoogleLogin = () => {
     googleLogin()
-      .then(() => {
-        Swal.fire({
-          icon: "Success",
-          title: "Login Success...",
-          text: "Ligin success !",
-          footer: '<a href="">Why do I have this issue?</a>',
+      .then((result) => {
+
+          Swal.fire({
+            icon: "Success",
+            title: "Seccess",
+            text: "Login in successfull !",
+            footer: '<a href="">Why do I have this issue?</a>',
+          });
+        //  navigate("/")
+        console.log(result.user);
+        const userInfo = {
+          email: result.user?.email,
+          name: result.user?.displayName,
+          image:result.user?. photoURL
+        };
+        axiosPublic.post("/users", userInfo).then((res) => {
+          console.log(res.data);
+          navigate("/");
         });
-        navigate(location?.state ? location.state : "/");
       })
       .catch();
   };

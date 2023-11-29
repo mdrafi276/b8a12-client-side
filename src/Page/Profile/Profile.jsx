@@ -35,7 +35,7 @@ const Profile = () => {
               </div>
               <a
                 className="bg-blue-700 px-4 py-1 text-slate-50 rounded-md z-10 hover:scale-125 transition-all duration-500 hover:bg-blue-500"
-                href="#"
+                href="https://web.facebook.com/profile.php?id=100048768060362"
               >
                 Folow
               </a>
@@ -48,7 +48,7 @@ const Profile = () => {
               </div>
               <div>
                 <button className="  hover:scale-150 duration-200 bg-transparent text-white">
-                  <GrEdit/>
+                  <GrEdit />
                 </button>
               </div>
             </div>

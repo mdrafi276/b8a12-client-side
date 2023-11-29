@@ -8,8 +8,9 @@ import './Navber.css'
 import Headroom from "react-headroom";
 import { AuthContext } from "../Provider/AuthProvider";
 import {  GrLogout } from "react-icons/gr";
+import useAdmin from "../../Page/Login/UseAxios/UseAdmin";
 const Navber = () => {
-
+const [isAdmin] = useAdmin()
 
   const { user, logOut } = useContext(AuthContext);
   
@@ -42,20 +43,7 @@ const Navber = () => {
           Home
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          className={({ isActive, isLoading }) =>
-            isLoading
-              ? "loading"
-              : isActive
-              ? "text-black bg-white hover:text-black "
-              : ""
-          }
-          to="/rooms"
-        >
-          Rooms
-        </NavLink>
-      </li>
+
       <li>
         <NavLink
           className={({ isActive, isLoading }) =>
@@ -70,20 +58,38 @@ const Navber = () => {
           Contact us
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          className={({ isActive, isLoading }) =>
-            isLoading
-              ? "loading"
-              : isActive
-              ? "text-black bg-white  hover:text-yellow-300"
-              : ""
-          }
-          to="/dashboard"
-        >
-          Dashboard
-        </NavLink>
-      </li>
+      {user && isAdmin && (
+        <li>
+          <NavLink
+            className={({ isActive, isLoading }) =>
+              isLoading
+                ? "loading"
+                : isActive
+                ? "text-black bg-white  hover:text-yellow-300"
+                : ""
+            }
+            to="/dashboard/dashboardUser"
+          >
+            Dashboard
+          </NavLink>
+        </li>
+      )}
+      {user && !isAdmin && (
+        <li>
+          <NavLink
+            className={({ isActive, isLoading }) =>
+              isLoading
+                ? "loading"
+                : isActive
+                ? "text-black bg-white  hover:text-yellow-300"
+                : ""
+            }
+            to="/dashboard/dashboardUser"
+          >
+            Dashboard
+          </NavLink>
+        </li>
+      )}
     </>
   );
   return (
@@ -145,7 +151,7 @@ const Navber = () => {
                       )} */}
                       <label tabIndex={0} className=" ">
                         <img
-                          className="rounded-full w-full bg-cover"
+                          className="rounded-full  cursor-pointer w-full bg-cover"
                           src={user?.photoURL ? user.photoURL : profile}
                           alt=""
                         />
