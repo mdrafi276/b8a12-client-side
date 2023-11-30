@@ -72,6 +72,11 @@ const {paymentIntent, error:confirmError } = await stripe.confirmCardPayment(cli
 })
 if(confirmError){
   console.log("confirm error ");
+   Swal.fire({
+     icon: "error",
+     title: "oppss",
+     text: "something wrong",
+   });
 }
 else{ Swal.fire({
   icon: "success",
@@ -80,9 +85,17 @@ else{ Swal.fire({
   
 });
   console.log('payment inatent', paymentIntent);
-  if(paymentIntent === 'succeeded'){
+  if(paymentIntent.status === 'succeeded'){
     console.log("transation id ", paymentIntent.id);
-    setTransationId(paymentIntent.id)
+    setTransationId(paymentIntent.id);
+  const  payment = {
+      email:user.email,
+      price:payData,
+      Date: new Date(),
+      
+
+    }
+
     
   }
 }
