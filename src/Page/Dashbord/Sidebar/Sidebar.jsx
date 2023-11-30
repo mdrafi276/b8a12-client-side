@@ -20,7 +20,6 @@ const Sidebar = () => {
   const hrRole = isHR;
   hrRole === true;
   const [isAdmin, isAdminLoading] = useAdmin();
-  console.log("Admin tomi koi ---->  Ei je vaiya ami ", isAdmin);
   
     const adminRole = isAdmin;
     adminRole === true;

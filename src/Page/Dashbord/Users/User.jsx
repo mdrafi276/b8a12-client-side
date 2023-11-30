@@ -19,7 +19,7 @@ const User = () => {
   //  const [userData, setUserData] = useState();
 
   //  useEffect(() => {
-  //    fetch("http://localhost:5000/users")
+  //    fetch("https://companny-server.vercel.app/users")
   //      .then((res) => res.json())
   //      .then((data) => setUserData(data));
   //  }, []);
@@ -51,7 +51,7 @@ const User = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/deleteUser/${_id}`, {
+        fetch(`https://companny-server.vercel.app/deleteUser/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

@@ -13,7 +13,7 @@ const DashbordRiview = () => {
       image,
     };
 
-    fetch("http://localhost:5000/riview", {
+    fetch("https://companny-server.vercel.app/riview", {
       method: "POST",
       headers: {
         "content-type": "application/json",

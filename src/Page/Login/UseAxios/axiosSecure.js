@@ -1,6 +1,6 @@
 // import axois from "axios"
 //  const axiosSecure = axois.create({
-//   baseURL: "http://localhost:5000",
+//   baseURL: "https://companny-server.vercel.app",
 //   withCredentials:true
 // })
 // export default axiosSecure;
@@ -12,7 +12,7 @@ import { AuthContext } from "../../../Components/Provider/AuthProvider";
 import { Navigate } from "react-router-dom";
 
 const axiosSecure = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://companny-server.vercel.app",
 });
 const useAxios = () => {
   const { logOut } = useContext(AuthContext) || {};

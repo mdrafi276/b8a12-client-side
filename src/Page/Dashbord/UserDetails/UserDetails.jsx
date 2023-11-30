@@ -3,19 +3,27 @@ import './UserDetails.css'
 
 
 
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useState } from "react";
 import useAxios from "../../Login/UseAxios/axiosSecure";
-import { useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import Navber from '../../../Components/Navber/Navber';
+import { AuthContext } from '../../../Components/Provider/AuthProvider';
 
 
 const UserDetails = () => {
   const axiosSecure = useAxios()
+  const {user} = useContext(AuthContext)
   const {id} = useParams()
+  // useEffect(()=>{
+  //   axiosSecure.get(`/pay/${user.email}`)
+  //   .then(res => {
+  //     console.log(res.data);
+  //   })
+  // },[])
   
   const [deData, setDeData] = useState([])
-  console.log(deData);
+  // console.log(deData);
   useEffect(()=>{
     axiosSecure.get(`/users/${id}`)
     .then(res =>{
@@ -55,6 +63,7 @@ const UserDetails = () => {
             </div>
             <div className="overlay cards__inner"></div>
           </div>
+        
         </div>
       </div>
     );

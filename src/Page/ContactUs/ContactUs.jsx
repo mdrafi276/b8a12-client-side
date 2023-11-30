@@ -16,7 +16,7 @@ const ContactUs = () => {
       email,
     };
 
-    fetch("http://localhost:5000/contact", {
+    fetch("https://companny-server.vercel.app/contact", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -3,6 +3,7 @@ import {  useContext, useEffect, useState } from 'react';
 import useAxios from '../../../Login/UseAxios/axiosSecure';
 import { AuthContext } from '../../../../Components/Provider/AuthProvider';
 import Swal from 'sweetalert2';
+import { Navigate } from 'react-router-dom';
 
 const ChackOutForm = ({pay}) => {
 
@@ -78,64 +79,80 @@ if(confirmError){
      text: "something wrong",
    });
 }
-else{ Swal.fire({
+else{ 
+
+  Swal.fire({
   icon: "success",
   title: "Success",
   text: "payment Success",
   
+  
 });
+
   console.log('payment inatent', paymentIntent);
   if(paymentIntent.status === 'succeeded'){
     console.log("transation id ", paymentIntent.id);
     setTransationId(paymentIntent.id);
-  const  payment = {
-      email:user.email,
-      price:payData,
-      Date: new Date(),
-      
+      Navigate("/");
+  const payment = {
+    email: user.email,
+    price: payData,
+    Date: new Date(),
 
-    }
+    transationId
+  };
 
-    
+    axiosSecure.post('/pay', payment)
+    .then(res =>{
+      console.log(res.data);
+    })
   }
 }
 
     }
     return (
-      <div className=" rounded-[27px]  border-2 hover:border-none cards__inner bottom-0">
-        <form
-          className="  rounded-xl cards__card car    text-white"
-          onSubmit={handlePeyment}
-        >
-          <CardElement
-            options={{
-              style: {
-                base: {
-                  fontSize: "16px",
+      <div>
+        {" "}
+        <div className=" rounded-[27px]  border-2 hover:border-none cards__inner bottom-0">
+          <form
+            className="  rounded-xl cards__card car    text-white"
+            onSubmit={handlePeyment}
+          >
+            <CardElement
+              options={{
+                style: {
+                  base: {
+                    fontSize: "16px",
 
-                  color: "black",
-                  "hover::placeholder": {
-                    color: "#aab7c4",
+                    color: "black",
+                    "hover::placeholder": {
+                      color: "#aab7c4",
+                    },
+                  },
+                  invalid: {
+                    color: "#9e2146",
                   },
                 },
-                invalid: {
-                  color: "#9e2146",
-                },
-              },
-            }}
-          />
-          <div className="flex justify-center">
-            <button
-              disabled={!stripe || !clientSecret}
-              type="submit"
-              className="btn  mx-auto w-full text-black hover:text-white  btn-three  bg-white backdrop-blur-sm my-4"
-            >
-              Pay
-            </button>
-          </div>{" "}
-          <p className="text-red-700 text-center">{error}</p>
-          {transationId && <p className=' text-green-600'>Your Transacrion id :{transationId}</p>}
-        </form>
+              }}
+            />
+            <div className="flex justify-center">
+              <button
+                disabled={!stripe || !clientSecret}
+                type="submit"
+                className="btn  mx-auto w-full text-black hover:text-white  btn-three  bg-white backdrop-blur-sm my-4"
+              >
+                Pay
+              </button>
+            </div>{" "}
+            <p className="text-red-700 text-center">{error}</p>
+          </form>
+        </div>
+        {transationId && (
+          <p className="text-green-600 text-[14px]">
+            {" "}
+            Your transaction id: {transationId}
+          </p>
+        )}
       </div>
     );
 };
