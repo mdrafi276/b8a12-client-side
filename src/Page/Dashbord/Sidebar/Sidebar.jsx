@@ -1,5 +1,5 @@
 
-import { GrContact, GrFormViewHide, GrHeroku, GrHome,  GrList, GrLogin, GrLogout, GrUser, GrUserAdmin } from "react-icons/gr";
+import { GrContact, GrFormViewHide,  GrHome,  GrList, GrLogin, GrLogout, GrUser,  } from "react-icons/gr";
 // import { FcSettings } from "react-icons/fc";
 import { AiOutlineBars } from "react-icons/ai";
 // import { BsGraphUp } from "react-icons/bs";
@@ -87,7 +87,7 @@ const Sidebar = () => {
             </Link>
           )}
 
-          {hrRole && !adminRole && (
+          {/* {hrRole && !adminRole && (
             <Link to="/dashboard/users">
               <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white hover:bg-gray-300   hover:text-black border border-white hover:border-none transition-colors duration-300 transform      ">
                 <GrUser className="w-5 h-5 " />
@@ -95,7 +95,7 @@ const Sidebar = () => {
                 <span className="mx-4 font-medium ">User</span>
               </buttone>
             </Link>
-          )}
+          )} */}
           <Link to="/dashboard/dashbordRiview">
             <buttone className="flex w-full items-center px-4 py-2 mt-5 text-white    hover:text-black border border-white hover:border-none transition-colors duration-300 transform      ">
               <GrFormViewHide className="w-5 h-5 " />

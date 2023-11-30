@@ -75,6 +75,10 @@ const router = createBrowserRouter([
             element: <EmployeeLst></EmployeeLst>,
           },
           {
+            path: "pay/:id",
+            element: <Payment></Payment>,
+          },
+          {
             path: "dashboardUser",
             element: <UserHome></UserHome>,
           },
@@ -104,10 +108,6 @@ const router = createBrowserRouter([
             <UserDetails></UserDetails>
           </PrivetRoute>
         ),
-      },
-      {
-        path: "payment",
-        element: <Payment></Payment>,
       },
     ],
   },

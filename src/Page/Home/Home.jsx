@@ -10,19 +10,17 @@ import AddRiview from "../AddRiview/AddRiview";
 
 const Home = () => {
     return (
-        <div>
-            <Navber></Navber>
-           <Banner></Banner>
-            <Service></Service>
-            <Timeline></Timeline>
-            <ExtraAnimaton></ExtraAnimaton>
-            <AddRiview></AddRiview>
-            
-            <Testimonial></Testimonial>
-
-            
-            <Footer></Footer>
-        </div>
+      <div className="">
+        {" "}
+        <Navber></Navber>
+        <Banner></Banner>
+        <Service></Service>
+        <Timeline></Timeline>
+        <ExtraAnimaton></ExtraAnimaton>
+        <AddRiview></AddRiview>
+        <Testimonial></Testimonial>
+        <Footer></Footer>
+      </div>
     );
 };
 

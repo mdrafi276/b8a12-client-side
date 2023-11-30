@@ -21,7 +21,7 @@ const EmployeeMap = ({dataUser}) => {
                </div>
              </div>
              <div className="flex  flex-row items-center  md:gap-5">
-               <Link to="/payment">
+               <Link to={`/dashboard/pay/${_id}`}>
                  {" "}
                  <button className="md:textarea-sm hover:scale-125 duration-300  text-[15px]">
                    Pay

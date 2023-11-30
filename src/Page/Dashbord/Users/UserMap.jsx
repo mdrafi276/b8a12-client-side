@@ -25,12 +25,28 @@ const UserMap = ({ dataUser, handleDelete, user, handleMakeAdmin }) => {
               </div>
             </div>
             <div className="flex items-center  flex-row  md:gap-5">
-              <button
-                onClick={() => handleDelete(_id)}
-                className="md:textarea-sm hover:scale-125 duration-300  text-[15px]"
-              >
-                <FaTrashAlt className="w-4" />
-              </button>
+              {role ? (
+                <>
+                  {" "}
+                  <button
+                    onClick={() => handleDelete(_id)}
+                    className="md:textarea-sm hover:scale-125 duration-300  text-[15px]"
+                  >
+                    <FaTrashAlt className="w-4" />
+                  </button>
+                </>
+              ) : (
+                <>
+                  {" "}
+                  <button
+                    disabled
+                    onClick={() => handleDelete(_id)}
+                    className="md:textarea-sm   text-[15px]"
+                  >
+                    <FaTrashAlt className="w-4" />
+                  </button>
+                </>
+              )}
               {selectedRole === "admin" ? (
                 "admin "
               ) : (

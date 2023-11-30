@@ -1,6 +1,6 @@
 // import Swal from "sweetalert2";
-import Swal from 'sweetalert2';
-import './AddRiview.css'
+import Swal from "sweetalert2";
+import "./AddRiview.css";
 const AddRiview = () => {
   const handleriview = (e) => {
     e.preventDefault();
@@ -32,8 +32,9 @@ const AddRiview = () => {
             footer: '<a href="">Why do I have this issue?</a>',
           });
         }
-      });}
-  
+      });
+  };
+
   return (
     <div className="anime">
       <div className="text-gray-600 body-font relative">
@@ -44,9 +45,7 @@ const AddRiview = () => {
             </h1>
           </div>
           <div className="lg:w-1/2 md:w-2/3 mx-auto">
-            <form
-             onSubmit={handleriview}
-             >
+            <form onSubmit={handleriview}>
               <div className="flex flex-wrap -m-2">
                 <div className="p-2 w-1/2">
                   <div className="relative">
@@ -116,6 +115,5 @@ const AddRiview = () => {
     </div>
   );
 };
-
 
 export default AddRiview;
